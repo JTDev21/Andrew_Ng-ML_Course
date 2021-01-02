@@ -22,13 +22,10 @@ grad = zeros(size(theta));
 theta0 = [0; theta(2:end)]; % 2 x 1
 error = (X * theta) - y; % m x 1
 
-regParam = (lambda / (2*m)) * theta0' * theta0;
+regParam = (lambda / (2*m)) * (theta0' * theta0);
 J = (1/ (2*m)) * (error' * error) + regParam;
 
-grad = ((1/m) * X' * error) + (lambda/m) * theta0;
-
-
-
+grad = ((1/m) * X' * error) + ((lambda/m) * theta0);
 
 
 % =========================================================================
