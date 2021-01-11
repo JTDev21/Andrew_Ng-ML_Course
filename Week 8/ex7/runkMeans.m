@@ -31,6 +31,7 @@ centroids = initial_centroids;
 previous_centroids = centroids;
 idx = zeros(m, 1);
 
+
 % Run K-Means
 for i=1:max_iters
     

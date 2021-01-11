@@ -21,12 +21,13 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
-
-
-
+m = size(X,1);
+for i = 1:m
+    x = X(i,:); % Just to make it easier to read
+    dist = sum((x - centroids) .^ 2, 2); % Calculate sum of dist square (k x 1)
+    [min_val, min_idx] = min(dist); % Find min index (Range from 1 to k)
+    idx(i) = min_idx;
+endfor;
 % =============================================================
 
 end
